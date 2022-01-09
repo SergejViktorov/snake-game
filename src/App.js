@@ -6,6 +6,7 @@ const DEFAULT_CELLS_VALUES = Array(BOARD_SIZE).fill(Array(BOARD_SIZE).fill(0))
 const AVAILABLE_MOVES = ['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft']
 const SPEED = 500
 
+
 const checkAvailableSlot = position => {
 	switch (true) {
 		case position >= BOARD_SIZE:
@@ -88,8 +89,8 @@ document.addEventListener('keydown', handleKeyDown)
 	}
 
 	return (
-		<div>
-			<h1>Результат: {snake.length}</h1>
+		<div className='field'>
+			<h1 className='title'>Результат: {snake.length}</h1>
 			{direction}
 			{DEFAULT_CELLS_VALUES.map((row, indexR) => (
 				<div key={indexR} className="row">
@@ -108,7 +109,6 @@ document.addEventListener('keydown', handleKeyDown)
 	)
 }
 const Call = ({ type }) => {
-	console.log('type', type)
 	return <div className={`cell ${type}`}></div>
 }
 
